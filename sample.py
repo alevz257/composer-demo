@@ -20,7 +20,7 @@ with airflow.DAG(
         'composer_sample_dag',
         'catchup=False',
         default_args=default_args,
-        schedule_interval=datetime.timedelta(days=1)) as dag:
+        schedule_interval=datetime.timedelta(minutes=1)) as dag:
 
     # Print the dag_run id from the Airflow logs
     print_dag_run_conf = bash_operator.BashOperator(
