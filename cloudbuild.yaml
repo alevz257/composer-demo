@@ -1,15 +1,4 @@
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
-  args:
-  - gcloud
-  - composer
-  - environments
-  - storage
-  - dags
-  - import
-  - --environment
-  - alevz-composer
-  - --location
-  - us-central1
-  - --source
-  - sample.py
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:['gcloud','composer','environments','storage','dags','import','--environment','alevz-composer','--location','us-central1','--source','sample.py']
+
