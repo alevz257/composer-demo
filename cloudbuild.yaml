@@ -1,3 +1,5 @@
 steps:
+- name: python:3.7
+  args: ["python", "${_SOURCE}"]
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   args: ['gcloud','composer','environments','storage','dags','import','--environment','${_COMPOSER}','--location','${_LOCATION}','--source','${_SOURCE}']
