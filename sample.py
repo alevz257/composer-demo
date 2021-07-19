@@ -20,8 +20,16 @@ with airflow.DAG(
         'composer_sample_dag',
         'catchup=False',
         default_args=default_args,
-        schedule_interval=datetime.timedelta(minutes=5)) as dag:
+        schedule_interval=datetime.timedelta(minutes=360)) as dag:
 
     # Print the dag_run id from the Airflow logs
     print_dag_run_conf = bash_operator.BashOperator(
         task_id='print_dag_run_conf', bash_command='echo {{ dag_run.id }}')
+
+    # Example adding new tasks
+    # print_new_task = bash_operator.BashOperator(
+    #   task_id='print_new_task' , bash_command='echo New Task is
+    # completed')
+    #
+    # print_dag_run_conf >> print_new_task
+    #
