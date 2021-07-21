@@ -30,6 +30,6 @@ with airflow.DAG(
     # print_new_task = bash_operator.BashOperator(
     #   task_id='print_new_task' , bash_command='echo New Task is
     # completed')
-    #
+    
     # print_dag_run_conf >> print_new_task
     #
